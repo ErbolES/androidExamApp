@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/menu_posts">
+
+    <fragment
+        android:id="@+id/menu_posts"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.posts.PostsFragment">
+        <action
+            android:id="@+id/to_post_details"
+            app:destination="@id/post_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/post_details"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.post_details.PostDetailsFragment">
+        <argument
+            android:name="post_id"
+            app:argType="integer"
+            app:nullable="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_albums"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.albums.AlbumsFragment">
+        <action
+            android:id="@+id/albumsToPhotos"
+            app:destination="@id/photosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.photos.PhotosFragment">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="albumName"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_users"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.users.UsersFragment" />
+
+    <fragment
+        android:id="@+id/menu_profile"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.profile.ProfileFragment" />
+</navigation>
